@@ -14,7 +14,7 @@ var lengthOfLongestSubstring = function (s) {
     let left = 0, right = 0, maxLen = 0
 
     while (right < s.length) {
-        let ch = s.charAt(right)
+        let ch = s[right]
         let index = hash[ch]
         if (index != 0 && index - 1 >= left) {//如果当前遍历到的字符已经在子串中 index>=left可以使得哈希表不用被重置
             if (right - left > maxLen)
