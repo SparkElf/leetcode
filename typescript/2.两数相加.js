@@ -46,7 +46,6 @@ var addTwoNumbers = function (l1, l2) {
     if (extra != 0) {
         let newNode = new ListNode(extra)
         cur.next = newNode
-        cur = newNode
     }
     root = root.next
 

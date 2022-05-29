@@ -11,9 +11,9 @@
  * @return {string}
  */
 var convert = function (s, numRows) {
-    if (numRows == 1) return s
+    if (numRows === 1) return s
     let arr = new Array(s.length)
-    let gap = 2 * numRows - 2
+    let gap = 2 * numRows - 2//2*numRows- 1 -1
     let p = 0
     //|/|/|可以拆成若干/|的组合（除了第一列）
     //第一行的 就是/|的顶部
@@ -21,10 +21,10 @@ var convert = function (s, numRows) {
         arr[p++] = s[i]
     //从第二行加到倒数第二行，如果加到倒数第一行会有重复
     //中间的 就是/|左右两边的点 
-    for (j = 1; j < numRows - 1; j++) {
-        arr[p++] = s[j]
+    for (let j = 1; j < numRows - 1; j++) {
+        arr[p++] = s[j]//每行第一个
         for (let i = gap; i - gap < s.length; i += gap) {
-            arr[p++] = s[i - j]
+            arr[p++] = s[i - j]//i就是尖尖的那个点
             if (i + j < s.length)
                 arr[p++] = s[i + j]
         }

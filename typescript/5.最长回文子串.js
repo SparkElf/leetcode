@@ -18,14 +18,12 @@ var preprocess = function (s) {
 }
 var longestPalindrome = function (s) {
     let str = preprocess(s)
-    //储存回文子串长度的数组
+    //储存回文子串长度一半的数组
     let arr = new Array(str.length).fill(0)
     //当前回文中心
     let c = 0
     //回文子串右边界
     let r = 0
-    //子串最大长度
-    let maxLength = 0
     //最长回文子串的中心位置
     let p = 0
     for (let i = 0; i < str.length; i++) {
@@ -52,11 +50,9 @@ var longestPalindrome = function (s) {
             }
             //更新
             c = i;
-            r = i + p[i];
-            if (maxLength < arr[i]) {
-                maxLength = arr[i]
+            r = i + arr[i];
+            if (arr[p] < arr[i])
                 p = i
-            }
         }
     }
 

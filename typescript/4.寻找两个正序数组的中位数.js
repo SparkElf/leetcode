@@ -19,7 +19,7 @@ var findMedianSortedArrays = function (nums1, nums2) {
     let l = 0, r = m
     let maxV = 0, minV = 0
     while (l <= r) {
-        let i = Math.floor((l + r) / 2)
+        let i = Math.floor((l + r) / 2)//i+j刚好是两个数组元素总数的一半，这就是中位数的意义。
         let j = Math.floor((m + n + 1) / 2) - i
         let num_i_1 = (i == 0 ? Number.NEGATIVE_INFINITY : nums1[i - 1])
         let num_i = (i == m ? Number.POSITIVE_INFINITY : nums1[i])

@@ -10,7 +10,7 @@ class Solution:
         m = {}
         for i in range(len(nums)):
             if m.get(target-nums[i]) is not None:
-                return [m.get(
-
-                )]
+                return [m.get(target-nums[i]), i]
+            m[nums[i]] = i
+        return []
 # @lc code=end

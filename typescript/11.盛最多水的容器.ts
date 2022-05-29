@@ -15,7 +15,7 @@ function maxArea(height: number[]): number {
             short = height[l++]
         else
             short = height[r--]
-        if (short > lastShort) {
+        if (short > lastShort) {//短边变长了才计算容积
             lastShort = short
             let c = short * (r - l + 1)
             if (c > maxC)
