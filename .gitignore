@@ -1,0 +1,9 @@
+node_modules
+c++/.vs
+c++/Debug
+c++/x64
+*.in
+*.out
+.vscode
+ans
+*.exe
